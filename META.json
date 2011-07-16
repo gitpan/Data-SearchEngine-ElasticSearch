@@ -22,7 +22,6 @@
       "runtime" : {
          "requires" : {
             "Clone" : 0,
-            "Data::SearchEngine" : "0.23",
             "Data::SearchEngine::Paginator" : 0,
             "Data::SearchEngine::Results" : 0,
             "ElasticSearch" : 0,
@@ -38,11 +37,13 @@
    },
    "release_status" : "stable",
    "resources" : {
+      "homepage" : "http://github.com/gphat/data-searchengine-elasticsearch",
       "repository" : {
          "type" : "git",
-         "url" : "https://github.com/gphat/data-searchengine-elasticsearch"
+         "url" : "http://github.com/gphat/data-searchengine-elasticsearch",
+         "web" : "http://github.com/gphat/data-searchengine-elasticsearch"
       }
    },
-   "version" : "0.01"
+   "version" : "0.02"
 }
 

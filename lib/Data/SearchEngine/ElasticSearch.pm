@@ -1,6 +1,6 @@
 package Data::SearchEngine::ElasticSearch;
 BEGIN {
-  $Data::SearchEngine::ElasticSearch::VERSION = '0.01';
+  $Data::SearchEngine::ElasticSearch::VERSION = '0.02';
 }
 use Moose;
 
@@ -174,9 +174,11 @@ sub search {
         foreach my $facet (keys %{ $resp->{facets} }) {
             my $href = $resp->{facets}->{$facet};
             if(exists($href->{terms})) {
+                my @vals = ();
                 foreach my $term (@{ $href->{terms} }) {
-                    $result->set_facet($facet, { count => $term->{count}, value => $term->{term} });
+                    push(@vals, { count => $term->{count}, value => $term->{term} });
                 }
+                $result->set_facet($facet, \@vals);
             }
         }
     }
@@ -204,7 +206,7 @@ Data::SearchEngine::ElasticSearch - ElasticSearch support for Data::SearchEngine
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 
@@ -212,13 +214,13 @@ version 0.01
     use Data::SearchEngine::ElasticSearch;
 
     my $dse = Data::SearchEngine::ElasticSearch->new(
-        url => $self->url
+        url => '127.0.0.1:9200'
     );
 
     my $query = Data::SearchEngine::Query->new(
-        index => $c->req->params->{type},
-        page => $c->req->params->{page} || 1,
-        count => $c->req->params->{count} || 10,
+        index => 'tweets',
+        page => 1,
+        count => 10,
         order => { _score => { order => 'asc' } },
         type => 'query_string',
         facets => {

@@ -1,8 +1,10 @@
 package Data::SearchEngine::ElasticSearch::Results;
 BEGIN {
-  $Data::SearchEngine::ElasticSearch::Results::VERSION = '0.01';
+  $Data::SearchEngine::ElasticSearch::Results::VERSION = '0.02';
 }
 use Moose;
+
+# ABSTRACT: Search Results
 
 extends 'Data::SearchEngine::Results';
 
@@ -18,11 +20,11 @@ __END__
 
 =head1 NAME
 
-Data::SearchEngine::ElasticSearch::Results
+Data::SearchEngine::ElasticSearch::Results - Search Results
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 AUTHOR
 

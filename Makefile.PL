@@ -23,14 +23,13 @@ my %WriteMakefileArgs = (
   'NAME' => 'Data::SearchEngine::ElasticSearch',
   'PREREQ_PM' => {
     'Clone' => '0',
-    'Data::SearchEngine' => '0.23',
     'Data::SearchEngine::Paginator' => '0',
     'Data::SearchEngine::Results' => '0',
     'ElasticSearch' => '0',
     'Moose' => '0',
     'Try::Tiny' => '0'
   },
-  'VERSION' => '0.01',
+  'VERSION' => '0.02',
   'test' => {
     'TESTS' => 't/*.t'
   }

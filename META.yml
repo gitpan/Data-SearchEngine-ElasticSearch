@@ -15,12 +15,12 @@ meta-spec:
 name: Data-SearchEngine-ElasticSearch
 requires:
   Clone: 0
-  Data::SearchEngine: 0.23
   Data::SearchEngine::Paginator: 0
   Data::SearchEngine::Results: 0
   ElasticSearch: 0
   Moose: 0
   Try::Tiny: 0
 resources:
-  repository: https://github.com/gphat/data-searchengine-elasticsearch
-version: 0.01
+  homepage: http://github.com/gphat/data-searchengine-elasticsearch
+  repository: http://github.com/gphat/data-searchengine-elasticsearch
+version: 0.02
