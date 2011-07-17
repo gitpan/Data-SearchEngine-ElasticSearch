@@ -1,6 +1,6 @@
 package Data::SearchEngine::ElasticSearch;
 BEGIN {
-  $Data::SearchEngine::ElasticSearch::VERSION = '0.02';
+  $Data::SearchEngine::ElasticSearch::VERSION = '0.03';
 }
 use Moose;
 
@@ -183,9 +183,11 @@ sub search {
         }
     }
     foreach my $doc (@{ $resp->{hits}->{hits} }) {
+        my $values = $doc->{_source};
+        $values->{_index} = $doc->{_index};
         $result->add(Data::SearchEngine::Item->new(
             id      => $doc->{_id},
-            values  => $doc->{_source},
+            values  => $values,
         ));
     }
 
@@ -206,7 +208,7 @@ Data::SearchEngine::ElasticSearch - ElasticSearch support for Data::SearchEngine
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 
