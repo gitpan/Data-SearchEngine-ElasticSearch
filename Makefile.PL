@@ -9,29 +9,30 @@ use ExtUtils::MakeMaker 6.30;
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'ElasticSearch support for Data::SearchEngine',
-  'AUTHOR' => 'Cory G Watson <gphat@cpan.org>',
-  'BUILD_REQUIRES' => {
-    'Test::More' => '0'
+  "ABSTRACT" => "ElasticSearch support for Data::SearchEngine",
+  "AUTHOR" => "Cory G Watson <gphat\@cpan.org>",
+  "BUILD_REQUIRES" => {
+    "Test::More" => 0
   },
-  'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.30'
+  "CONFIGURE_REQUIRES" => {
+    "ExtUtils::MakeMaker" => "6.30"
   },
-  'DISTNAME' => 'Data-SearchEngine-ElasticSearch',
-  'EXE_FILES' => [],
-  'LICENSE' => 'perl',
-  'NAME' => 'Data::SearchEngine::ElasticSearch',
-  'PREREQ_PM' => {
-    'Clone' => '0',
-    'Data::SearchEngine::Paginator' => '0',
-    'Data::SearchEngine::Results' => '0',
-    'ElasticSearch' => '0',
-    'Moose' => '0',
-    'Try::Tiny' => '0'
+  "DISTNAME" => "Data-SearchEngine-ElasticSearch",
+  "EXE_FILES" => [],
+  "LICENSE" => "perl",
+  "NAME" => "Data::SearchEngine::ElasticSearch",
+  "PREREQ_PM" => {
+    "Clone" => 0,
+    "Data::SearchEngine::Item" => 0,
+    "Data::SearchEngine::Paginator" => 0,
+    "Data::SearchEngine::Results" => 0,
+    "ElasticSearch" => 0,
+    "Moose" => 0,
+    "Try::Tiny" => 0
   },
-  'VERSION' => '0.03',
-  'test' => {
-    'TESTS' => 't/*.t'
+  "VERSION" => "0.04",
+  "test" => {
+    "TESTS" => "t/*.t"
   }
 );
 

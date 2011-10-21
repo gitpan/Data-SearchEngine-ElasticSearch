@@ -7,7 +7,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.200007, CPAN::Meta::Converter version 2.110440'
+generated_by: 'Dist::Zilla version 4.300002, CPAN::Meta::Converter version 2.112150'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -15,12 +15,13 @@ meta-spec:
 name: Data-SearchEngine-ElasticSearch
 requires:
   Clone: 0
+  Data::SearchEngine::Item: 0
   Data::SearchEngine::Paginator: 0
   Data::SearchEngine::Results: 0
   ElasticSearch: 0
   Moose: 0
   Try::Tiny: 0
 resources:
-  homepage: http://github.com/gphat/data-searchengine-elasticsearch
-  repository: http://github.com/gphat/data-searchengine-elasticsearch
-version: 0.03
+  homepage: https://github.com/gphat/data-searchengine-elasticsearch
+  repository: https://github.com/gphat/data-searchengine-elasticsearch.git
+version: 0.04

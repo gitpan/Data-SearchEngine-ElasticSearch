@@ -4,7 +4,7 @@
       "Cory G Watson <gphat@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.200007, CPAN::Meta::Converter version 2.110440",
+   "generated_by" : "Dist::Zilla version 4.300002, CPAN::Meta::Converter version 2.112150",
    "license" : [
       "perl_5"
    ],
@@ -22,6 +22,7 @@
       "runtime" : {
          "requires" : {
             "Clone" : 0,
+            "Data::SearchEngine::Item" : 0,
             "Data::SearchEngine::Paginator" : 0,
             "Data::SearchEngine::Results" : 0,
             "ElasticSearch" : 0,
@@ -37,13 +38,13 @@
    },
    "release_status" : "stable",
    "resources" : {
-      "homepage" : "http://github.com/gphat/data-searchengine-elasticsearch",
+      "homepage" : "https://github.com/gphat/data-searchengine-elasticsearch",
       "repository" : {
          "type" : "git",
-         "url" : "http://github.com/gphat/data-searchengine-elasticsearch",
-         "web" : "http://github.com/gphat/data-searchengine-elasticsearch"
+         "url" : "https://github.com/gphat/data-searchengine-elasticsearch.git",
+         "web" : "https://github.com/gphat/data-searchengine-elasticsearch"
       }
    },
-   "version" : "0.03"
+   "version" : "0.04"
 }
 

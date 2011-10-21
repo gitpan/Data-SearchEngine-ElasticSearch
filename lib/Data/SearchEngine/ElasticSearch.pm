@@ -1,6 +1,6 @@
 package Data::SearchEngine::ElasticSearch;
-BEGIN {
-  $Data::SearchEngine::ElasticSearch::VERSION = '0.03';
+{
+  $Data::SearchEngine::ElasticSearch::VERSION = '0.04';
 }
 use Moose;
 
@@ -15,6 +15,7 @@ with (
     'Data::SearchEngine::Modifiable'
 );
 
+use Data::SearchEngine::Item;
 use Data::SearchEngine::Paginator;
 use Data::SearchEngine::ElasticSearch::Results;
 
@@ -208,7 +209,7 @@ Data::SearchEngine::ElasticSearch - ElasticSearch support for Data::SearchEngine
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 SYNOPSIS
 
