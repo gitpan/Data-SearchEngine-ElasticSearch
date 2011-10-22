@@ -1,6 +1,6 @@
 package Data::SearchEngine::ElasticSearch;
 {
-  $Data::SearchEngine::ElasticSearch::VERSION = '0.04';
+  $Data::SearchEngine::ElasticSearch::VERSION = '0.05';
 }
 use Moose;
 
@@ -124,6 +124,11 @@ sub search {
 
     $options->{index} = $query->index;
 
+    if($query->has_debug) {
+        # Turn on explain
+        $options->{explain} = 1;
+    }
+
     if($query->has_filters) {
         $options->{filter} = {};
         foreach my $filter ($query->filter_names) {
@@ -168,7 +173,8 @@ sub search {
     my $result = Data::SearchEngine::ElasticSearch::Results->new(
         query => $query,
         pager => $pager,
-        elapsed => time - $start
+        elapsed => time - $start,
+        raw => $resp
     );
 
     if(exists($resp->{facets})) {
@@ -209,7 +215,7 @@ Data::SearchEngine::ElasticSearch - ElasticSearch support for Data::SearchEngine
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 SYNOPSIS
 
@@ -250,6 +256,12 @@ ElasticSearch's query DSL is large and complex.  It is not well suited to
 abstraction by a library like this one.  As such you will almost likely find
 this abstraction lacking.  Expect it to improve as the author uses more of
 ElasticSearch's features in applications.
+
+=head2 Explanations
+
+Setting C<debug> to a true value will cause <explain> to be set when the query
+is sent to ElasticSearch.  You can find the explanation by examining the
+C<raw> attribute of the L<Data::SearchEngine::Results> object.
 
 =head2 Queries
 

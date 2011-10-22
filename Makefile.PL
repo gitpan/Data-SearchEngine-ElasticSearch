@@ -23,6 +23,7 @@ my %WriteMakefileArgs = (
   "NAME" => "Data::SearchEngine::ElasticSearch",
   "PREREQ_PM" => {
     "Clone" => 0,
+    "Data::SearchEngine" => "0.26",
     "Data::SearchEngine::Item" => 0,
     "Data::SearchEngine::Paginator" => 0,
     "Data::SearchEngine::Results" => 0,
@@ -30,7 +31,7 @@ my %WriteMakefileArgs = (
     "Moose" => 0,
     "Try::Tiny" => 0
   },
-  "VERSION" => "0.04",
+  "VERSION" => "0.05",
   "test" => {
     "TESTS" => "t/*.t"
   }

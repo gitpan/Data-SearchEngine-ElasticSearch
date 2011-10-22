@@ -1,5 +1,8 @@
 Revision history for Data-SearchEngine-ElasticSearch
 
+0.05 Oct 22 2011
+  * Use the debug and raw attributes of D:SE::Query
+
 0.04 Oct 21 2011
   * Include item in ElasticSearch.pm to prevent runtime errors.
 

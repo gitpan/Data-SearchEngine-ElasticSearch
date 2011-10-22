@@ -22,6 +22,7 @@
       "runtime" : {
          "requires" : {
             "Clone" : 0,
+            "Data::SearchEngine" : "0.26",
             "Data::SearchEngine::Item" : 0,
             "Data::SearchEngine::Paginator" : 0,
             "Data::SearchEngine::Results" : 0,
@@ -45,6 +46,6 @@
          "web" : "https://github.com/gphat/data-searchengine-elasticsearch"
       }
    },
-   "version" : "0.04"
+   "version" : "0.05"
 }
 
