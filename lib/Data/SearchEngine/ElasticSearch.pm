@@ -1,6 +1,6 @@
 package Data::SearchEngine::ElasticSearch;
 {
-  $Data::SearchEngine::ElasticSearch::VERSION = '0.05';
+  $Data::SearchEngine::ElasticSearch::VERSION = '0.06';
 }
 use Moose;
 
@@ -215,7 +215,7 @@ Data::SearchEngine::ElasticSearch - ElasticSearch support for Data::SearchEngine
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
 
@@ -223,7 +223,7 @@ version 0.05
     use Data::SearchEngine::ElasticSearch;
 
     my $dse = Data::SearchEngine::ElasticSearch->new(
-        url => '127.0.0.1:9200'
+        servers => [ '127.0.0.1:9200' ]
     );
 
     my $query = Data::SearchEngine::Query->new(

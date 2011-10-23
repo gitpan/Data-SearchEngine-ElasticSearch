@@ -25,4 +25,4 @@ requires:
 resources:
   homepage: https://github.com/gphat/data-searchengine-elasticsearch
   repository: https://github.com/gphat/data-searchengine-elasticsearch.git
-version: 0.05
+version: 0.06
