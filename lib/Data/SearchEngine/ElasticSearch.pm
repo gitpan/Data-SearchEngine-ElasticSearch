@@ -1,6 +1,6 @@
 package Data::SearchEngine::ElasticSearch;
 {
-  $Data::SearchEngine::ElasticSearch::VERSION = '0.06';
+  $Data::SearchEngine::ElasticSearch::VERSION = '0.07';
 }
 use Moose;
 
@@ -165,7 +165,7 @@ sub search {
     }
 
     my $pager = Data::SearchEngine::Paginator->new(
-        current_page => $page,
+        current_page => $page || 1,
         entries_per_page => $count,
         total_entries => $hit_count
     );
@@ -215,7 +215,7 @@ Data::SearchEngine::ElasticSearch - ElasticSearch support for Data::SearchEngine
 
 =head1 VERSION
 
-version 0.06
+version 0.07
 
 =head1 SYNOPSIS
 
