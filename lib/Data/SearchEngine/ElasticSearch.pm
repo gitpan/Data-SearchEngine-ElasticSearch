@@ -1,6 +1,6 @@
 package Data::SearchEngine::ElasticSearch;
 {
-  $Data::SearchEngine::ElasticSearch::VERSION = '0.07';
+  $Data::SearchEngine::ElasticSearch::VERSION = '0.08';
 }
 use Moose;
 
@@ -69,9 +69,9 @@ sub add {
 
 sub present {
     my ($self, $item) = @_;
-    
+
     my $data = $item->values;
-    
+
     try {
         my $result = $self->_es->get(
             index => delete($data->{index}),
@@ -82,7 +82,7 @@ sub present {
         # ElasticSearch throws an exception if the document isn't there.
         return 0;
     }
-    
+
     return 1;
 }
 
@@ -104,13 +104,16 @@ sub remove_by_id {
     } catch {
         return 0;
     }
-    
+
     return 1;
 }
 
 sub update {
-    die("not implemented");
+    my $self = shift;
+
+    $self->add(@_);
 }
+
 
 
 sub search {
@@ -215,7 +218,7 @@ Data::SearchEngine::ElasticSearch - ElasticSearch support for Data::SearchEngine
 
 =head1 VERSION
 
-version 0.07
+version 0.08
 
 =head1 SYNOPSIS
 
