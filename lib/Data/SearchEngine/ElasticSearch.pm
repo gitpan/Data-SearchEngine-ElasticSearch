@@ -1,6 +1,6 @@
 package Data::SearchEngine::ElasticSearch;
 {
-  $Data::SearchEngine::ElasticSearch::VERSION = '0.08';
+  $Data::SearchEngine::ElasticSearch::VERSION = '0.09';
 }
 use Moose;
 
@@ -64,6 +64,13 @@ sub add {
         })
     }
     $self->_es->bulk_index(\@docs);
+}
+
+
+sub engine {
+    my ($self) = @_;
+    
+    return $self->_es;
 }
 
 
@@ -218,7 +225,7 @@ Data::SearchEngine::ElasticSearch - ElasticSearch support for Data::SearchEngine
 
 =head1 VERSION
 
-version 0.08
+version 0.09
 
 =head1 SYNOPSIS
 
@@ -324,6 +331,10 @@ The transport to use.  Refer to L<ElasticSearch> for more information.
 
 Add items to the index.  Keep in mind that the L<Data::SearchEngine::Item>
 should have values set for L<index> and L<type>.
+
+=head2 engine
+
+Returns the underlying ElasticSearch implementation.
 
 =head2 present ($item)
 
