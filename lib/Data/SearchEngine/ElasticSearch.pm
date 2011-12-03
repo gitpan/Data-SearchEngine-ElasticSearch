@@ -1,6 +1,6 @@
 package Data::SearchEngine::ElasticSearch;
 {
-  $Data::SearchEngine::ElasticSearch::VERSION = '0.10';
+  $Data::SearchEngine::ElasticSearch::VERSION = '0.11';
 }
 use Moose;
 
@@ -218,6 +218,7 @@ sub search {
     foreach my $doc (@{ $resp->{hits}->{hits} }) {
         my $values = $doc->{_source};
         $values->{_index} = $doc->{_index};
+        $values->{_version} = $doc->{_version};
         $result->add(Data::SearchEngine::Item->new(
             id      => $doc->{_id},
             values  => $values,
@@ -241,7 +242,7 @@ Data::SearchEngine::ElasticSearch - ElasticSearch support for Data::SearchEngine
 
 =head1 VERSION
 
-version 0.10
+version 0.11
 
 =head1 SYNOPSIS
 
@@ -286,6 +287,11 @@ ElasticSearch's query DSL is large and complex.  It is not well suited to
 abstraction by a library like this one.  As such you will almost likely find
 this abstraction lacking.  Expect it to improve as the author uses more of
 ElasticSearch's features in applications.
+
+=head2 Resultes
+
+The C<_index> and C<_version> keys will both be populated in the returned
+L<Data::SearchEngine::Item>.
 
 =head2 Explanations
 

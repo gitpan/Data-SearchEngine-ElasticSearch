@@ -1,5 +1,8 @@
 Revision history for Data-SearchEngine-ElasticSearch
 
+0.11 Dec 3 2011
+  * Make _version a value in the Item for search results
+
 0.10 Nov 27 2011
   * Automatically combine filters inside a parent and filter
   * Automatically copy filters into facets so that facets match the overall
