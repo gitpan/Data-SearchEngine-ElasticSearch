@@ -21,8 +21,9 @@ requires:
   Data::SearchEngine::Results: 0
   ElasticSearch: 0
   Moose: 0
+  Time::HiRes: 0
   Try::Tiny: 0
 resources:
   homepage: https://github.com/gphat/data-searchengine-elasticsearch
   repository: https://github.com/gphat/data-searchengine-elasticsearch.git
-version: 0.12
+version: 0.13

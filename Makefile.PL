@@ -29,9 +29,10 @@ my %WriteMakefileArgs = (
     "Data::SearchEngine::Results" => 0,
     "ElasticSearch" => 0,
     "Moose" => 0,
+    "Time::HiRes" => 0,
     "Try::Tiny" => 0
   },
-  "VERSION" => "0.12",
+  "VERSION" => "0.13",
   "test" => {
     "TESTS" => "t/*.t"
   }

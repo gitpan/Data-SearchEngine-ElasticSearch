@@ -28,6 +28,7 @@
             "Data::SearchEngine::Results" : 0,
             "ElasticSearch" : 0,
             "Moose" : 0,
+            "Time::HiRes" : 0,
             "Try::Tiny" : 0
          }
       },
@@ -46,6 +47,6 @@
          "web" : "https://github.com/gphat/data-searchengine-elasticsearch"
       }
    },
-   "version" : "0.12"
+   "version" : "0.13"
 }
 

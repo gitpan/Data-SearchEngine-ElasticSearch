@@ -1,6 +1,6 @@
 package Data::SearchEngine::ElasticSearch;
 {
-  $Data::SearchEngine::ElasticSearch::VERSION = '0.12';
+  $Data::SearchEngine::ElasticSearch::VERSION = '0.13';
 }
 use Moose;
 
@@ -8,6 +8,7 @@ use Moose;
 
 use Clone qw(clone);
 use ElasticSearch;
+use Time::HiRes;
 use Try::Tiny;
 
 with (
@@ -179,7 +180,7 @@ sub search {
     $options->{from} = ($query->page - 1) * $query->count;
     $options->{size} = $query->count;
 
-    my $start = time;
+    my $start = Time::HiRes::time;
     my $resp = $self->_es->search($options);
 
     my $page = $query->page;
@@ -269,7 +270,7 @@ Data::SearchEngine::ElasticSearch - ElasticSearch support for Data::SearchEngine
 
 =head1 VERSION
 
-version 0.12
+version 0.13
 
 =head1 SYNOPSIS
 
