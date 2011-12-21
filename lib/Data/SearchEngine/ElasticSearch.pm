@@ -1,6 +1,6 @@
 package Data::SearchEngine::ElasticSearch;
 {
-  $Data::SearchEngine::ElasticSearch::VERSION = '0.13';
+  $Data::SearchEngine::ElasticSearch::VERSION = '0.14';
 }
 use Moose;
 
@@ -109,17 +109,12 @@ sub remove_by_id {
     my ($self, $item) = @_;
 
     my $data = $item->values;
-    try {
-        $self->_es->delete(
-            index => delete($data->{index}),
-            type => delete($data->{type}),
-            id => $item->id
-        );
-    } catch {
-        return 0;
-    }
 
-    return 1;
+    $self->_es->delete(
+        index => $data->{index},
+        type => $data->{type},
+        id => $item->id
+    );
 }
 
 sub update {
@@ -270,7 +265,7 @@ Data::SearchEngine::ElasticSearch - ElasticSearch support for Data::SearchEngine
 
 =head1 VERSION
 
-version 0.13
+version 0.14
 
 =head1 SYNOPSIS
 
