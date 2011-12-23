@@ -1,6 +1,6 @@
 package Data::SearchEngine::ElasticSearch;
 {
-  $Data::SearchEngine::ElasticSearch::VERSION = '0.15';
+  $Data::SearchEngine::ElasticSearch::VERSION = '0.16';
 }
 use Moose;
 
@@ -33,13 +33,6 @@ has '_es' => (
             trace_calls => $self->debug
         )
     }
-);
-
-
-has 'filter_combiner' => (
-    is => 'rw',
-    isa => 'Str',
-    default => 'and'
 );
 
 
@@ -133,7 +126,11 @@ sub update {
 
 
 sub search {
-    my ($self, $query) = @_;
+    my ($self, $query, $filter_combine) = @_;
+
+    unless(defined($filter_combine)) {
+        $filter_combine = 'and';
+    }
 
     my $options;
     if($query->has_query) {
@@ -153,7 +150,7 @@ sub search {
         foreach my $filter ($query->filter_names) {
             push(@facet_cache, $query->get_filter($filter));
         }
-        $options->{filter}->{$self->filter_combiner} = \@facet_cache;
+        $options->{filter}->{$filter_combine} = \@facet_cache;
     }
 
     if($query->has_facets) {
@@ -166,7 +163,7 @@ sub search {
 
         if($query->has_filters) {
             foreach my $f (keys %facets) {
-                $facets{$f}->{facet_filter}->{$self->filter_combiner} = \@facet_cache;
+                $facets{$f}->{facet_filter}->{$filter_combine} = \@facet_cache;
             }
         }
 
@@ -272,7 +269,7 @@ Data::SearchEngine::ElasticSearch - ElasticSearch support for Data::SearchEngine
 
 =head1 VERSION
 
-version 0.15
+version 0.16
 
 =head1 SYNOPSIS
 
@@ -374,7 +371,11 @@ is expected that you will populate these values in the item thusly:
 =head2 Filters
 
 If you set multiple filters they will be ANDed together.  If you want to change
-this behavior then you can change the C<filter_combiner> attribute to "or".
+this behavior then you can supply an additional argument to the C<query> method:
+
+  $dse->search($query, 'or');
+
+This defaults to 'and'.
 
 =head2 Facets & Filters
 
@@ -382,11 +383,6 @@ If you use facets then any filters will be copied into the facet's
 C<facet_filter> so that the facets are limited similarly to the results.
 
 =head1 ATTRIBUTES
-
-=head2 filter_combiner
-
-Boolean used to combine filters. Should be either "and" or "or". Defaults to
-and.
 
 =head2 servers
 
