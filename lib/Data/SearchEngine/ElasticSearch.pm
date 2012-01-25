@@ -1,6 +1,6 @@
 package Data::SearchEngine::ElasticSearch;
 {
-  $Data::SearchEngine::ElasticSearch::VERSION = '0.16';
+  $Data::SearchEngine::ElasticSearch::VERSION = '0.17';
 }
 use Moose;
 
@@ -176,6 +176,10 @@ sub search {
         $options->{sort} = $query->order;
     }
 
+    if($query->has_fields) {
+        $options->{fields} = $query->fields;
+    }
+
     $options->{from} = ($query->page - 1) * $query->count;
     $options->{size} = $query->count;
 
@@ -234,7 +238,7 @@ sub search {
 sub _doc_to_item {
     my ($self, $doc) = @_;
 
-    my $values = $doc->{_source};
+    my $values = $doc->{_source} || $doc->{fields};
     $values->{_index} = $doc->{_index};
     $values->{_version} = $doc->{_version};
     return Data::SearchEngine::Item->new(
@@ -269,7 +273,7 @@ Data::SearchEngine::ElasticSearch - ElasticSearch support for Data::SearchEngine
 
 =head1 VERSION
 
-version 0.16
+version 0.17
 
 =head1 SYNOPSIS
 
@@ -426,7 +430,7 @@ Cory G Watson <gphat@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Cold Hard Code, LLC.
+This software is copyright (c) 2012 by Cold Hard Code, LLC.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
