@@ -1,6 +1,6 @@
 package Data::SearchEngine::ElasticSearch;
 {
-  $Data::SearchEngine::ElasticSearch::VERSION = '0.18';
+  $Data::SearchEngine::ElasticSearch::VERSION = '0.19';
 }
 use Moose;
 
@@ -48,9 +48,6 @@ has 'transport' => (
     isa => 'Str',
     default => 'http'
 );
-
-
-sub engine { (shift)->_es }
 
 
 sub add {
@@ -277,7 +274,7 @@ Data::SearchEngine::ElasticSearch - ElasticSearch support for Data::SearchEngine
 
 =head1 VERSION
 
-version 0.18
+version 0.19
 
 =head1 SYNOPSIS
 
@@ -401,10 +398,6 @@ The servers to which we'll be connecting.
 The transport to use.  Refer to L<ElasticSearch> for more information.
 
 =head1 METHODS
-
-=head2 engine
-
-Returns the underlying search engine handle
 
 =head2 add ([ $items ])
 

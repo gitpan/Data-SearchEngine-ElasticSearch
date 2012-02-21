@@ -26,4 +26,4 @@ requires:
 resources:
   homepage: https://github.com/holophrastic/data-searchengine-elasticsearch
   repository: https://github.com/holophrastic/data-searchengine-elasticsearch.git
-version: 0.18
+version: 0.19

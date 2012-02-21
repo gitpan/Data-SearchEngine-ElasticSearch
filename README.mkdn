@@ -4,7 +4,7 @@ Data::SearchEngine::ElasticSearch - ElasticSearch support for Data::SearchEngine
 
 # VERSION
 
-version 0.18
+version 0.19
 
 # SYNOPSIS
 
@@ -128,10 +128,6 @@ The servers to which we'll be connecting.
 The transport to use.  Refer to [ElasticSearch](http://search.cpan.org/perldoc?ElasticSearch) for more information.
 
 # METHODS
-
-## engine
-
-Returns the underlying search engine handle
 
 ## add ([ $items ])
 

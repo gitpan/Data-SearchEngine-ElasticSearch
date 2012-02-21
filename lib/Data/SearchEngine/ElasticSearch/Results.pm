@@ -1,6 +1,6 @@
 package Data::SearchEngine::ElasticSearch::Results;
 {
-  $Data::SearchEngine::ElasticSearch::Results::VERSION = '0.18';
+  $Data::SearchEngine::ElasticSearch::Results::VERSION = '0.19';
 }
 use Moose;
 
@@ -24,7 +24,7 @@ Data::SearchEngine::ElasticSearch::Results - Search Results
 
 =head1 VERSION
 
-version 0.18
+version 0.19
 
 =head1 AUTHOR
 
