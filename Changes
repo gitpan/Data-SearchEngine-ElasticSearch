@@ -1,6 +1,6 @@
 Revision history for Data-SearchEngine-ElasticSearch
 
-0.19 Feb 21 2012
+0.21 Jun 26 2012
 
 0.19 Feb 21 2012
   * Git merging went awry and gave us too many ->engine methods.

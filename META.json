@@ -4,7 +4,7 @@
       "Cory G Watson <gphat@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300007, CPAN::Meta::Converter version 2.120351",
+   "generated_by" : "Dist::Zilla version 4.300020, CPAN::Meta::Converter version 2.120921",
    "license" : [
       "perl_5"
    ],
@@ -31,15 +31,13 @@
             "Time::HiRes" : "0",
             "Try::Tiny" : "0"
          }
-      },
-      "test" : {
-         "requires" : {
-            "Test::More" : "0"
-         }
       }
    },
    "release_status" : "stable",
    "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/holophrastic/data-searchengine-elasticsearch/issues"
+      },
       "homepage" : "https://github.com/holophrastic/data-searchengine-elasticsearch",
       "repository" : {
          "type" : "git",
@@ -47,6 +45,6 @@
          "web" : "https://github.com/holophrastic/data-searchengine-elasticsearch"
       }
    },
-   "version" : "0.19"
+   "version" : "0.21"
 }
 

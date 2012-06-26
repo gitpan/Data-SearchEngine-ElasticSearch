@@ -1,6 +1,6 @@
 package Data::SearchEngine::ElasticSearch;
 {
-  $Data::SearchEngine::ElasticSearch::VERSION = '0.19';
+  $Data::SearchEngine::ElasticSearch::VERSION = '0.21';
 }
 use Moose;
 
@@ -243,7 +243,7 @@ sub _doc_to_item {
     $values->{_version} = $doc->{_version};
     return Data::SearchEngine::Item->new(
         id      => $doc->{_id},
-        score   => $doc->{_score},
+        score   => $doc->{_score} || 0,
         values  => $values,
     );
 }
@@ -274,7 +274,7 @@ Data::SearchEngine::ElasticSearch - ElasticSearch support for Data::SearchEngine
 
 =head1 VERSION
 
-version 0.19
+version 0.21
 
 =head1 SYNOPSIS
 

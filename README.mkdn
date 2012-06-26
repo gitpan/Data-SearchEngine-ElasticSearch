@@ -4,7 +4,7 @@ Data::SearchEngine::ElasticSearch - ElasticSearch support for Data::SearchEngine
 
 # VERSION
 
-version 0.19
+version 0.21
 
 # SYNOPSIS
 
@@ -74,7 +74,7 @@ The query is then passed on to [ElasticSearch](http://search.cpan.org/perldoc?El
         # ...
     );
 
-So if you want to do a query_string query, you would set up your query like
+So if you want to do a query\_string query, you would set up your query like
 this:
 
     my $query = Data::SearchEngine::Query->new(
@@ -129,7 +129,7 @@ The transport to use.  Refer to [ElasticSearch](http://search.cpan.org/perldoc?E
 
 # METHODS
 
-## add ([ $items ])
+## add (\[ $items \])
 
 Add items to the index.  Keep in mind that the [Data::SearchEngine::Item](http://search.cpan.org/perldoc?Data::SearchEngine::Item)
 should have values set for [index](http://search.cpan.org/perldoc?index) and [type](http://search.cpan.org/perldoc?type).
@@ -143,7 +143,7 @@ Returns the underlying ElasticSearch implementation.
 Returns true if the [Data::SearchEngine::Item](http://search.cpan.org/perldoc?Data::SearchEngine::Item) is present.  Uses the item's
 `id`.
 
-## remove_by_id ($item)
+## remove\_by\_id ($item)
 
 Remove the specified item from the index.  Uses the item's `id`.
 
@@ -151,7 +151,7 @@ Remove the specified item from the index.  Uses the item's `id`.
 
 Search!
 
-## find_by_id ($index, $type, $id)
+## find\_by\_id ($index, $type, $id)
 
 Find a document by it's unique id.
 

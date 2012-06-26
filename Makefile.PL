@@ -11,9 +11,7 @@ use ExtUtils::MakeMaker 6.30;
 my %WriteMakefileArgs = (
   "ABSTRACT" => "ElasticSearch support for Data::SearchEngine",
   "AUTHOR" => "Cory G Watson <gphat\@cpan.org>",
-  "BUILD_REQUIRES" => {
-    "Test::More" => 0
-  },
+  "BUILD_REQUIRES" => {},
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30"
   },
@@ -32,7 +30,7 @@ my %WriteMakefileArgs = (
     "Time::HiRes" => 0,
     "Try::Tiny" => 0
   },
-  "VERSION" => "0.19",
+  "VERSION" => "0.21",
   "test" => {
     "TESTS" => "t/*.t"
   }
